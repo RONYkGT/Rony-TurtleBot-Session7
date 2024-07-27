@@ -6,6 +6,7 @@ import time
 
 class RobotDriver(Node):
     FRONT_INDEX = 355
+    LEFT_INDEX = 90
     def __init__(self):
         super().__init__('driver')
         self.turning = False
@@ -16,23 +17,29 @@ class RobotDriver(Node):
             self.scan_callback,
             10)
         self.publisher = self.create_publisher(Twist, 'cmd_vel', 10)
-        
-        
-    def turn_90_degrees(self):
+
+
+    def turn_90_degrees(self, msg):
         twist = Twist()
         twist.linear.x = 0.0
-        twist.angular.z = 0.5236
-        self.publisher.publish(twist)
+        twist.angular.z = -0.5
         self.get_logger().info("Turning right")
-        time.sleep(3) 
-        twist.angular.z = 0.0
-        twist.linear.x = 0.0
-        self.get_logger().info("Stopping turn")
-        self.publisher.publish(twist)
+        if not(95 <= msg.ranges.index(min(msg.ranges)) <= 100): #Repeats until the closest wall is on the left side
+            self.publisher.publish(twist)
+            self.get_logger().info(f"index of min range: {msg.ranges.index(min(msg.ranges))}" )
+        else:
+            twist.angular.z = 0.0
+            twist.linear.x = 0.0
+            self.get_logger().info("Stopping turn")
+            self.publisher.publish(twist)
+            self.turning = False
+        
 
     def scan_callback(self, msg):
         if not self.turning:
             self.control_robot(msg)
+        else:
+            self.turn_90_degrees(msg)
 
     def control_robot(self, msg):
         twist = Twist()
@@ -45,17 +52,10 @@ class RobotDriver(Node):
             self.publisher.publish(twist)
         else:
             self.get_logger().info("Close to wall, stopping and turning")
-            if self.firstTime:
-                self.get_logger().info(f"Index: {msg.ranges.index(distance)}")
-                self.firstTime = False
             twist.linear.x = 0.0
             twist.angular.z = 0.0
             self.publisher.publish(twist)
             self.turning = True
-            self.turn_90_degrees()
-            self.turning = False
-            self.get_logger().info("Pausing after turn")
-            time.sleep(1)  # Pause for a short time after turning to avoid immediate re-detection of the wall
 
 def main(args=None):
     rclpy.init(args=args)
