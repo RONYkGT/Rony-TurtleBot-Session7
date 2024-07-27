@@ -1,0 +1,4 @@
+[console_scripts]
+driver_node = turtle_controller.robot_driver:main
+tester_node = turtle_controller.tester_node:main
+wall_finder_server = turtle_controller.wall_finder_srv:main

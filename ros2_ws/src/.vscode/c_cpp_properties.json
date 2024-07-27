@@ -1,0 +1,22 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/install/turtle_controller_interfaces/include/**",
+        "/opt/ros/humble/include/**",
+        "/home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/turtle_controller_interfaces/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

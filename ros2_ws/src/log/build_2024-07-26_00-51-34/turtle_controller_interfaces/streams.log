@@ -1,0 +1,35 @@
+[0.145s] Invoking command in '/home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/build/turtle_controller_interfaces': /usr/bin/cmake /home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/turtle_controller_interfaces -DCMAKE_INSTALL_PREFIX=/home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/install/turtle_controller_interfaces
+[0.231s] -- The C compiler identification is GNU 11.4.0
+[0.357s] -- The CXX compiler identification is GNU 11.4.0
+[0.368s] -- Detecting C compiler ABI info
+[0.419s] -- Detecting C compiler ABI info - done
+[0.429s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.430s] -- Detecting C compile features
+[0.430s] -- Detecting C compile features - done
+[0.435s] -- Detecting CXX compiler ABI info
+[0.499s] -- Detecting CXX compiler ABI info - done
+[0.505s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.505s] -- Detecting CXX compile features
+[0.505s] -- Detecting CXX compile features - done
+[0.510s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.784s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.876s] -- Found rclpy: 3.3.13 (/opt/ros/humble/share/rclpy/cmake)
+[0.877s] -- Found std_msgs: 4.2.4 (/opt/ros/humble/share/std_msgs/cmake)
+[0.921s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.926s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.937s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.955s] [31mCMake Error at /opt/ros/humble/share/rosidl_typesupport_c/cmake/get_used_typesupports.cmake:35 (message):
+[0.955s]   No 'rosidl_typesupport_c' found
+[0.955s] Call Stack (most recent call first):
+[0.955s]   /opt/ros/humble/share/rosidl_typesupport_c/cmake/rosidl_typesupport_c-extras.cmake:8 (get_used_typesupports)
+[0.955s]   /opt/ros/humble/share/rosidl_typesupport_c/cmake/rosidl_typesupport_cConfig.cmake:41 (include)
+[0.955s]   /opt/ros/humble/share/builtin_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+[0.955s]   /opt/ros/humble/share/builtin_interfaces/cmake/builtin_interfacesConfig.cmake:41 (include)
+[0.955s]   /opt/ros/humble/share/std_msgs/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+[0.955s]   /opt/ros/humble/share/std_msgs/cmake/std_msgsConfig.cmake:41 (include)
+[0.955s]   CMakeLists.txt:11 (find_package)
+[0.955s] 
+[0.955s] [0m
+[0.955s] -- Configuring incomplete, errors occurred!
+[0.955s] See also "/home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/build/turtle_controller_interfaces/CMakeFiles/CMakeOutput.log".
+[0.960s] Invoked command in '/home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/build/turtle_controller_interfaces' returned '1': /usr/bin/cmake /home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/turtle_controller_interfaces -DCMAKE_INSTALL_PREFIX=/home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/install/turtle_controller_interfaces
