@@ -22,7 +22,9 @@ setup(
         'console_scripts': [
         	'wall_finder_server = turtle_controller.wall_finder_srv:main',
         	'driver_node = turtle_controller.robot_driver:main',
-            'tester_node = turtle_controller.tester_node:main'
+            'tester_node = turtle_controller.tester_node:main',
+            'lap_action_srv = turtle_controller.lap_action_srv:main',
+            'lap_action_client = turtle_controller.lap_action_client:main',
         ],
     },
 )

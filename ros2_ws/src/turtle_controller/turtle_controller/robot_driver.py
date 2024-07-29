@@ -1,6 +1,7 @@
 import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import LaserScan
+from std_msgs.msg import String
 from geometry_msgs.msg import Twist
 import time
 
@@ -16,7 +17,10 @@ class RobotDriver(Node):
             'scan',
             self.scan_callback,
             10)
+        
         self.publisher = self.create_publisher(Twist, 'cmd_vel', 10)
+        self.publisher2 = self.create_publisher(String, 'start_timer', 10)
+
 
 
     def turn_90_degrees(self, msg):
@@ -24,7 +28,7 @@ class RobotDriver(Node):
         twist.linear.x = 0.0
         twist.angular.z = -0.5
         self.get_logger().info("Turning right")
-        if not(95 <= msg.ranges.index(min(msg.ranges)) <= 100): #Repeats until the closest wall is on the left side
+        if not(95 <= msg.ranges.index(min(msg.ranges)) <= 105): #Repeats until the closest wall is on the left side
             self.publisher.publish(twist)
             self.get_logger().info(f"index of min range: {msg.ranges.index(min(msg.ranges))}" )
         else:
@@ -33,6 +37,11 @@ class RobotDriver(Node):
             self.get_logger().info("Stopping turn")
             self.publisher.publish(twist)
             self.turning = False
+            emptymsg = String()
+            emptymsg.data = ""
+            self.publisher2.publish(emptymsg)
+        
+        
         
 
     def scan_callback(self, msg):

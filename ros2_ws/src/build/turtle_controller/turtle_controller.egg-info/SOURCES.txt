@@ -13,6 +13,8 @@ test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py
 turtle_controller/__init__.py
+turtle_controller/lap_action_client.py
+turtle_controller/lap_action_srv.py
 turtle_controller/robot_driver.py
 turtle_controller/tester_node.py
 turtle_controller/wall_finder_srv.py

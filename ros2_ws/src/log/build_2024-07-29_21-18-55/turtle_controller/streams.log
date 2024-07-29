@@ -1,0 +1,28 @@
+[0.678s] Invoking command in '/home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/turtle_controller': PYTHONPATH=/home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/build/turtle_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/install/turtle_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/turtle_controller build --build-base /home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/build/turtle_controller/build install --record /home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/build/turtle_controller/install.log --single-version-externally-managed install_data
+[0.860s] running egg_info
+[0.870s] writing ../build/turtle_controller/turtle_controller.egg-info/PKG-INFO
+[0.870s] writing dependency_links to ../build/turtle_controller/turtle_controller.egg-info/dependency_links.txt
+[0.870s] writing entry points to ../build/turtle_controller/turtle_controller.egg-info/entry_points.txt
+[0.870s] writing requirements to ../build/turtle_controller/turtle_controller.egg-info/requires.txt
+[0.871s] writing top-level names to ../build/turtle_controller/turtle_controller.egg-info/top_level.txt
+[0.892s] reading manifest file '../build/turtle_controller/turtle_controller.egg-info/SOURCES.txt'
+[0.893s] writing manifest file '../build/turtle_controller/turtle_controller.egg-info/SOURCES.txt'
+[0.893s] running build
+[0.893s] running build_py
+[0.893s] copying turtle_controller/robot_driver.py -> /home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/build/turtle_controller/build/lib/turtle_controller
+[0.894s] running install
+[0.899s] running install_lib
+[0.909s] copying /home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/build/turtle_controller/build/lib/turtle_controller/robot_driver.py -> /home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/install/turtle_controller/lib/python3.10/site-packages/turtle_controller
+[0.910s] byte-compiling /home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/install/turtle_controller/lib/python3.10/site-packages/turtle_controller/robot_driver.py to robot_driver.cpython-310.pyc
+[0.910s] running install_data
+[0.911s] running install_egg_info
+[0.922s] removing '/home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/install/turtle_controller/lib/python3.10/site-packages/turtle_controller-0.0.0-py3.10.egg-info' (and everything under it)
+[0.922s] Copying ../build/turtle_controller/turtle_controller.egg-info to /home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/install/turtle_controller/lib/python3.10/site-packages/turtle_controller-0.0.0-py3.10.egg-info
+[0.922s] running install_scripts
+[1.034s] Installing driver_node script to /home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/install/turtle_controller/lib/turtle_controller
+[1.034s] Installing lap_action_client script to /home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/install/turtle_controller/lib/turtle_controller
+[1.035s] Installing lap_action_srv script to /home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/install/turtle_controller/lib/turtle_controller
+[1.035s] Installing tester_node script to /home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/install/turtle_controller/lib/turtle_controller
+[1.035s] Installing wall_finder_server script to /home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/install/turtle_controller/lib/turtle_controller
+[1.035s] writing list of installed files to '/home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/build/turtle_controller/install.log'
+[1.072s] Invoked command in '/home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/turtle_controller' returned '0': PYTHONPATH=/home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/build/turtle_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/install/turtle_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/turtle_controller build --build-base /home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/build/turtle_controller/build install --record /home/rony/Documents/inmind/Session07/Rony-TurtleBot-Session7/ros2_ws/src/build/turtle_controller/install.log --single-version-externally-managed install_data

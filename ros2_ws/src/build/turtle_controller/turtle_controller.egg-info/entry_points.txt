@@ -1,4 +1,6 @@
 [console_scripts]
 driver_node = turtle_controller.robot_driver:main
+lap_action_client = turtle_controller.lap_action_client:main
+lap_action_srv = turtle_controller.lap_action_srv:main
 tester_node = turtle_controller.tester_node:main
 wall_finder_server = turtle_controller.wall_finder_srv:main
