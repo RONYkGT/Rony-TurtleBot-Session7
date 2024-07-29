@@ -55,13 +55,16 @@ class RobotDriver(Node):
         
         
     def turn_to_angle(self,msg):
+        if (msg.ranges[self.closest_angle] - msg.ranges[0]) < 0.2: # angle is almost the same as front
+            self.firstTime = False
+            return
         twist = Twist()
         twist.linear.x = 0.0
         self.get_logger().info("Turning to closest angle")
         if 355 > self.closest_angle >= 90:
             twist.angular.z = 0.5 # turn left
             self.get_logger().info("Turning left")
-            
+
         elif 90 > self.closest_angle > 5:
             twist.angular.z = -0.5 # turn right
             self.get_logger().info("Turning right1")
@@ -100,7 +103,7 @@ class RobotDriver(Node):
         self.get_logger().info(f"{distance}")
         if distance > 0.5:
             self.get_logger().info("Moving forward")
-            twist.linear.x = 0.6
+            twist.linear.x = 0.4
             twist.angular.z = 0.0
             self.publisher.publish(twist)
         else:
