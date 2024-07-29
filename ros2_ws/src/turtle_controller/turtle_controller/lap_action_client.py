@@ -25,7 +25,7 @@ class LapTimeActionClient(Node):
         self.turns += 1
         self.get_logger().info(f'Turns: {self.turns}')
         if self.turns == 2 or self.turns % 4 == 2:
-            self.send_goal()
+            self.send_goal() # Send the goal only every 4 turns offset 2 turns
 
     def send_goal(self):
         self.get_logger().info('Sending goal request...')

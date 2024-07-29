@@ -29,7 +29,6 @@ class RobotDriver(Node):
 
     def send_request(self):
         req = FindClosestWall.Request()
-        # Populate request fields if necessary
         future = self.cli.call_async(req)
         rclpy.spin_until_future_complete(self, future)
         return future.result()
@@ -44,6 +43,7 @@ class RobotDriver(Node):
             self.publisher.publish(twist)
             self.get_logger().info(f"index of min range: {msg.ranges.index(min(msg.ranges))}" )
         else:
+            # Stops the robot after fully turning right
             twist.angular.z = 0.0
             twist.linear.x = 0.0
             self.get_logger().info("Stopping turn")
@@ -69,12 +69,12 @@ class RobotDriver(Node):
             twist.angular.z = -0.5 # turn right
             self.get_logger().info("Turning right1")
             
-        else:
+        else: # Target wall already at the front
             self.firstTime = False
             return
         
         min_range_idx = msg.ranges.index(min(msg.ranges))
-        if not(min_range_idx <= 5 or min_range_idx >= 355): #Repeats until the closest wall is on the left side
+        if not(min_range_idx <= 5 or min_range_idx >= 355): #Repeats until the closest wall is at the front
             self.publisher.publish(twist)
             self.get_logger().info(f"index of min range: {msg.ranges.index(min(msg.ranges))}" )
         else:
@@ -89,9 +89,10 @@ class RobotDriver(Node):
         pass
 
     def scan_callback(self, msg):
-        if self.firstTime:
+        if self.firstTime: # Running robot for the first time and going to nearest wall
             self.turn_to_angle(msg)
             return
+        
         if not self.turning:
             self.control_robot(msg)
         else:
@@ -118,9 +119,11 @@ def main(args=None):
     node = RobotDriver()
     response = node.send_request()
     if response.success:
+        # Get the closest wall angle and pass it to the closest_angle attribute inside the node
         print('Object success:', response.success)
         print('Object angle:', response.angle)
-        node.closest_angle = response.angle
+        node.closest_angle = response.angle 
+        
     else:
         print('Service call failed')
     rclpy.spin(node)
