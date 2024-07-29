@@ -40,6 +40,7 @@ typedef struct turtle_controller_interfaces__srv__FindClosestWall_Request__Seque
 typedef struct turtle_controller_interfaces__srv__FindClosestWall_Response
 {
   bool success;
+  int32_t angle;
 } turtle_controller_interfaces__srv__FindClosestWall_Response;
 
 // Struct for a sequence of turtle_controller_interfaces__srv__FindClosestWall_Response.
