@@ -55,7 +55,8 @@ class RobotDriver(Node):
         
         
     def turn_to_angle(self,msg):
-        if (msg.ranges[self.closest_angle] - msg.ranges[0]) < 0.2: # angle is almost the same as front
+        if abs(msg.ranges[self.closest_angle] - msg.ranges[0]) < 0.025: # angle is almost the same as front
+            self.get_logger().info("angle is same as front")
             self.firstTime = False
             return
         twist = Twist()
@@ -90,6 +91,7 @@ class RobotDriver(Node):
 
     def scan_callback(self, msg):
         if self.firstTime: # Running robot for the first time and going to nearest wall
+            self.get_logger().info("turning initial turn")
             self.turn_to_angle(msg)
             return
         
