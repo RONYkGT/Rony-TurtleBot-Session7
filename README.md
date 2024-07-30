@@ -38,6 +38,10 @@ This project is the assignment for session07 at inmind. It is based on Gazebo an
     source /opt/ros/humble/setup.bash 
     source install/setup.bash
     ```
+- **Build package**:
+    ```bash
+    colcon build
+    ```
 - **Launch the nodes**:
      ```bash
     ros2 launch turtle_controller robot_launch.py
