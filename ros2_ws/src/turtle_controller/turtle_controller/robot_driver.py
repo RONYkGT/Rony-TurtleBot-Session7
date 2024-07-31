@@ -13,7 +13,7 @@ class RobotDriver(Node):
         super().__init__('driver')
         self.turning = False
         self.firstTime = True
-        self.closest_angle = 0
+        self.closest_angle = None
         self.subscription = self.create_subscription(
             LaserScan,
             'scan',
@@ -28,9 +28,11 @@ class RobotDriver(Node):
 
 
     def send_request(self):
+
         req = FindClosestWall.Request()
         future = self.cli.call_async(req)
         rclpy.spin_until_future_complete(self, future)
+        self.get_logger().info('sent closest wall request')
         return future.result()
 
 
@@ -92,6 +94,7 @@ class RobotDriver(Node):
     def scan_callback(self, msg):
         if self.firstTime: # Running robot for the first time and going to nearest wall
             self.get_logger().info("turning initial turn")
+            self.get_logger().info(f"da closest angle: {self.closest_angle}")
             self.turn_to_angle(msg)
             return
         
@@ -117,6 +120,7 @@ class RobotDriver(Node):
             self.turning = True
 
 def main(args=None):
+    time.sleep(1)
     rclpy.init(args=args)
     node = RobotDriver()
     response = node.send_request()

@@ -10,12 +10,12 @@ class WallFinderServer(Node):
 
     def __init__(self):
         super().__init__("wall_finder_server")
-        self.get_logger().info("Running node")
+        self.get_logger().info("Running")
 
         self._service = self.create_service(FindClosestWall, 'find_closest_wall', self.handle_wall_request)
         self._scan_subscriber = self.create_subscription(LaserScan, 'scan', self.scan_callback, 10)
         self._odom_subscriber = self.create_subscription(Odometry, 'odom', self.odom_callback, 10)
-
+        
         self.lidar_data = None
         self.positions = []  # To store the robot's positions
         self.plot_thread = threading.Thread(target=self.plot_data)
@@ -59,6 +59,7 @@ class WallFinderServer(Node):
         plt.show()
 
 def main(args=None):
+    
     rclpy.init(args=args)
     server_node = WallFinderServer()
     rclpy.spin(server_node)
